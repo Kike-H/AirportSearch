@@ -68,6 +68,7 @@
 		8A1128E928DF62960010FFBB /* AirportSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8A4110E928DF834A0091476D /* Utilities */,
 				8A4110E528DF81D20091476D /* Model */,
 				8A1128EA28DF62960010FFBB /* AirportSearchApp.swift */,
 				8A1128EC28DF62960010FFBB /* ContentView.swift */,
@@ -91,6 +92,13 @@
 				8A4110E728DF82050091476D /* AirportResponseModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8A4110E928DF834A0091476D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F0C9F85FA55A22079B89475C /* Pods */ = {
