@@ -15,7 +15,7 @@ struct SelectRadiusView: View {
         NavigationView {
             VStack {
                 Text("\(Int(sliderValue))")
-                Slider(value: $sliderValue, in: 10...100, step: 5.0) { _ in
+                Slider(value: $sliderValue, in: 10...200, step: 5.0) { _ in
                     airportViewModel.setMarkers(radius: Int(sliderValue))
                 }
                 NavigationLink(destination: MapAirportView(airportViewModel: airportViewModel)) {
