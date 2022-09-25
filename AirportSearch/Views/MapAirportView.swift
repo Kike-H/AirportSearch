@@ -11,8 +11,17 @@ import MapKit
 struct MapAirportView: View {
     @StateObject var airportViewModel: LocationManager
     var body: some View {
-        Map(coordinateRegion: $airportViewModel.region,  showsUserLocation: true, annotationItems: airportViewModel.markers) { mark in
-            mark.location
+        TabView {
+            Map(coordinateRegion: $airportViewModel.region, showsUserLocation:true, annotationItems: airportViewModel.markers) { mark in
+                mark.location
+            }.ignoresSafeArea(.all, edges: .top)
+            .tabItem {
+                Label("Map", systemImage: "mappin.circle.fill")
+            }
+            ListComponent(airports: airportViewModel.markers)
+            .tabItem {
+                Label("List", systemImage: "list.bullet.circle.fill")
+            }
         }
     }
 }

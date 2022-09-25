@@ -29,11 +29,15 @@ class AirportModelElement: Identifiable {
     let name: String
     let countryCode: String
     let location: MapMarker
+    let lat: Double
+    let lon: Double
     
     init(airportResponse: AirportResponseModelElement) {
         self.name = airportResponse.name
         self.countryCode = airportResponse.alpha2CountryCode
         self.location = .init(coordinate: .init(latitude: airportResponse.latitude, longitude: airportResponse.longitude), tint: .red)
+        self.lat = airportResponse.latitude
+        self.lon = airportResponse.longitude
     }
     
 }
