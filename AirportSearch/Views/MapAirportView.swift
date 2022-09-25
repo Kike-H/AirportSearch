@@ -19,6 +19,7 @@ struct MapAirportView: View {
                 Label("Map", systemImage: "mappin.circle.fill")
             }
             ListComponent(airports: airportViewModel.markers)
+                .badge(airportViewModel.markers.count)
             .tabItem {
                 Label("List", systemImage: "list.bullet.circle.fill")
             }
