@@ -12,6 +12,11 @@
 		8A1128EF28DF62980010FFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1128EE28DF62980010FFBB /* Assets.xcassets */; };
 		8A1128F228DF62980010FFBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1128F128DF62980010FFBB /* Preview Assets.xcassets */; };
 		8A4110E828DF82050091476D /* AirportResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4110E728DF82050091476D /* AirportResponseModel.swift */; };
+		8A4110EF28DF86F60091476D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4110EE28DF86F60091476D /* Env.swift */; };
+		8A4110F128DF872C0091476D /* AirportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4110F028DF872C0091476D /* AirportViewModel.swift */; };
+		8A4110F328DF95700091476D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4110F228DF95700091476D /* LocationViewModel.swift */; };
+		8A489A8228DFED0000D17B91 /* SelectRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */; };
+		8A489A8428DFEE5200D17B91 /* MapAirportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A489A8328DFEE5200D17B91 /* MapAirportView.swift */; };
 		E220ACB92ADC411FAB129A07 /* Pods_AirportSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76B5876BA6BF90BA9CA26C0 /* Pods_AirportSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +29,11 @@
 		8A1128EE28DF62980010FFBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1128F128DF62980010FFBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A4110E728DF82050091476D /* AirportResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportResponseModel.swift; sourceTree = "<group>"; };
+		8A4110EE28DF86F60091476D /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		8A4110F028DF872C0091476D /* AirportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportViewModel.swift; sourceTree = "<group>"; };
+		8A4110F228DF95700091476D /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRadiusView.swift; sourceTree = "<group>"; };
+		8A489A8328DFEE5200D17B91 /* MapAirportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAirportView.swift; sourceTree = "<group>"; };
 		E76B5876BA6BF90BA9CA26C0 /* Pods_AirportSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirportSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,12 +78,14 @@
 		8A1128E928DF62960010FFBB /* AirportSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8A489A8028DFECDE00D17B91 /* Views */,
 				8A4110E928DF834A0091476D /* Utilities */,
 				8A4110E528DF81D20091476D /* Model */,
 				8A1128EA28DF62960010FFBB /* AirportSearchApp.swift */,
 				8A1128EC28DF62960010FFBB /* ContentView.swift */,
 				8A1128EE28DF62980010FFBB /* Assets.xcassets */,
 				8A1128F028DF62980010FFBB /* Preview Content */,
+				8A4110EE28DF86F60091476D /* Env.swift */,
 			);
 			path = AirportSearch;
 			sourceTree = "<group>";
@@ -97,8 +109,19 @@
 		8A4110E928DF834A0091476D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8A4110F028DF872C0091476D /* AirportViewModel.swift */,
+				8A4110F228DF95700091476D /* LocationViewModel.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8A489A8028DFECDE00D17B91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */,
+				8A489A8328DFEE5200D17B91 /* MapAirportView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F0C9F85FA55A22079B89475C /* Pods */ = {
@@ -225,7 +248,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4110E828DF82050091476D /* AirportResponseModel.swift in Sources */,
+				8A489A8428DFEE5200D17B91 /* MapAirportView.swift in Sources */,
+				8A4110EF28DF86F60091476D /* Env.swift in Sources */,
+				8A4110F328DF95700091476D /* LocationViewModel.swift in Sources */,
 				8A1128ED28DF62960010FFBB /* ContentView.swift in Sources */,
+				8A489A8228DFED0000D17B91 /* SelectRadiusView.swift in Sources */,
+				8A4110F128DF872C0091476D /* AirportViewModel.swift in Sources */,
 				8A1128EB28DF62960010FFBB /* AirportSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +387,7 @@
 				DEVELOPMENT_TEAM = N96B8R8294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to use location to show you in map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -389,6 +418,7 @@
 				DEVELOPMENT_TEAM = N96B8R8294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to use location to show you in map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
