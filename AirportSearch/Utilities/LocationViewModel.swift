@@ -32,7 +32,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         switch manager.authorizationStatus {
         case .notDetermined:
-            manager.requestWhenInUseAuthorization() // Answer the user for use your current location
+            manager.requestWhenInUseAuthorization() // Ask for user's permision to use your current location
         case .restricted:
             debugPrint("Restricted")
         case .denied:
