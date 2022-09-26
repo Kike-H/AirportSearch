@@ -15,7 +15,7 @@ struct MapAirportView: View {
         TabView {
             Map(coordinateRegion: $region, showsUserLocation:true, annotationItems: airports) { mark in
                 mark.location
-            }.ignoresSafeArea(.all, edges: .top)
+            }.ignoresSafeArea([.all], edges: [.top, .horizontal])
             .tabItem {
                 Label("Map", systemImage: "mappin.circle.fill")
             }
