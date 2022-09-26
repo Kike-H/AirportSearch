@@ -19,7 +19,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:37.785834 , longitude:  -122.406417), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
-    
+//  Override the init function and init the manager
     override init() {
         super.init()
         manager = CLLocationManager()
@@ -32,7 +32,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         switch manager.authorizationStatus {
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            manager.requestWhenInUseAuthorization() // Answer the user for use your current location
         case .restricted:
             debugPrint("Restricted")
         case .denied:

@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+/* MARK: - Comment
+ 
+ If the list of airports is empty the view shows a empty message else show a list of all the elements of aiports in base a cellComponent
+ 
+*/
+
+
 struct ListComponent: View {
     var airports: AirportModel
     

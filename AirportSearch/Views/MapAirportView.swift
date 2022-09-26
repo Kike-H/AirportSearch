@@ -8,6 +8,13 @@
 import SwiftUI
 import MapKit
 
+
+/* MARK: - Comment
+ 
+ This is the second view this view switches between a view map and list, both show the pins that have gotten of the first view
+ 
+*/
+
 struct MapAirportView: View {
     @State var region: MKCoordinateRegion
     var airports: AirportModel

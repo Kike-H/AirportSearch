@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+/* MARK: - Comment
+ 
+ Show a row with a airplane image system airport's name and airport's country code and the latitude and longitude of the airport with a
+ pin's system symbol
+ 
+*/
 
 struct CellComponent: View {
     

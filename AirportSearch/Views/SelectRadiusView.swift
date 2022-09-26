@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+/* MARK: - Comment
+ 
+ This is the main view the show a slider for select the radius
+ 
+*/
+
 struct SelectRadiusView: View {
     @State private var sliderValue: Double = 10
-    @StateObject var locationViewModel: LocationViewModel = .init()
-    @StateObject var airportViewModel: AirportViewModel = .init()
+    @StateObject var locationViewModel: LocationViewModel = .init() // Control location
+    @StateObject var airportViewModel: AirportViewModel = .init() // Control Api
     
     var body: some View {
         NavigationView {
@@ -26,6 +32,7 @@ struct SelectRadiusView: View {
                     .font(.title2)
                     .foregroundColor(.gray)
                 Spacer()
+//              This Button redirects you to the map view (with user's region and airports)
                 NavigationLink(destination: MapAirportView(region: locationViewModel.region, airports: airportViewModel.airportsResponse)) {
                     Text("SEARCH")
                         .font(.title)
@@ -38,6 +45,7 @@ struct SelectRadiusView: View {
                 }
                 Spacer()
             }.simultaneousGesture(TapGesture().onEnded {
+//              Whit the same tap gesture make a fecth to api
                 airportViewModel.setAirPorts(lat: locationViewModel.lat, lon: locationViewModel.lon, radius: Int(sliderValue))
             })
             .padding()

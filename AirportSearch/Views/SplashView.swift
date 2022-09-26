@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/* MARK: - Comment
+ 
+ This is the splash screen that changes into the main view after 2.5 seconds
+ 
+*/
+
 struct SplashView: View {
     @State private var isActive = false
     var body: some View {

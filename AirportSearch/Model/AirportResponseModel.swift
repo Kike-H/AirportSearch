@@ -9,6 +9,8 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
+/* MARK: - The models for the corresponse data */
+
 struct AirportResponseModelElement: Codable {
     let iataCode: String?
     let icaoCode: String?
@@ -24,6 +26,7 @@ struct AirportResponseModelElement: Codable {
 }
 
 
+// MARK: - Use the response data model for create a model the view can use
 class AirportModelElement: Identifiable {
     let id = UUID()
     let name: String

@@ -18,11 +18,11 @@ class AirportViewModel: ObservableObject{
     @Published var airportsResponse: AirportModel = []
     
     init(){
-        @Environment(\.APIKEY) var apiKey
+        @Environment(\.APIKEY) var apiKey // Get the api for env file
         self.headers["X-RapidAPI-Key"] = apiKey
     }
     
-    
+//  Make the fetch with alamofire and decode the data into Airport Response Model or throw an error
     private func fetchGetNearAirport(lat: Double, lon: Double, radius: Int, completetion: @escaping (Result<AirportResponseModel, Error>) -> ()) {
         AF.request(baseUrlAPI+"lat=\(lat)&lon=\(lon)&radius=\(radius)", headers: self.headers)
             .responseDecodable(of: AirportResponseModel.self) { response in
@@ -36,6 +36,7 @@ class AirportViewModel: ObservableObject{
             }
     }
     
+//  Use the firts functions and parse the reposne into Airportmodel or print the error
     func setAirPorts(lat: Double, lon:Double, radius: Int) {
         self.fetchGetNearAirport(lat:lat, lon: lon, radius: radius) { result in
             switch result {
