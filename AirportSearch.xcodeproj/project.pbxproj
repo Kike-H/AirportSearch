@@ -407,6 +407,7 @@
 				DEVELOPMENT_TEAM = N96B8R8294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AirportFinder;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to use location to show you in map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -438,6 +439,7 @@
 				DEVELOPMENT_TEAM = N96B8R8294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AirportFinder;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs to use location to show you in map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
