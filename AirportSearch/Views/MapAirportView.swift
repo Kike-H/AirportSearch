@@ -9,17 +9,18 @@ import SwiftUI
 import MapKit
 
 struct MapAirportView: View {
-    @StateObject var airportViewModel: LocationManager
+    @State var region: MKCoordinateRegion
+    var airports: AirportModel
     var body: some View {
         TabView {
-            Map(coordinateRegion: $airportViewModel.region, showsUserLocation:true, annotationItems: airportViewModel.markers) { mark in
+            Map(coordinateRegion: $region, showsUserLocation:true, annotationItems: airports) { mark in
                 mark.location
             }.ignoresSafeArea(.all, edges: .top)
             .tabItem {
                 Label("Map", systemImage: "mappin.circle.fill")
             }
-            ListComponent(airports: airportViewModel.markers)
-                .badge(airportViewModel.markers.count)
+            ListComponent(airports: airports)
+                .badge(airports.count)
             .tabItem {
                 Label("List", systemImage: "list.bullet.circle.fill")
             }
@@ -29,6 +30,6 @@ struct MapAirportView: View {
 
 struct MapAirportView_Previews: PreviewProvider {
     static var previews: some View {
-        MapAirportView(airportViewModel: .init())
+        MapAirportView(region: .init(), airports: .init())
     }
 }

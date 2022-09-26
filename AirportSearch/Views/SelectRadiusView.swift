@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SelectRadiusView: View {
     @State private var sliderValue: Double = 10
-    @StateObject var airportViewModel: LocationManager = LocationManager()
+    @StateObject var locationViewModel: LocationViewModel = .init()
+    @StateObject var airportViewModel: AirportViewModel = .init()
     
     var body: some View {
         NavigationView {
@@ -20,14 +21,12 @@ struct SelectRadiusView: View {
                 Text("\(Int(sliderValue))")
                     .font(.system(size: 60, weight: .bold))
                     .foregroundColor(.gray)
-                Slider(value: $sliderValue, in: 10...200, step: 5.0) { _ in
-                    airportViewModel.setMarkers(radius: Int(sliderValue))
-                }
+                Slider(value: $sliderValue, in: 10...200, step: 5.0)
                 Text("RADIUS IN KM")
                     .font(.title2)
                     .foregroundColor(.gray)
                 Spacer()
-                NavigationLink(destination: MapAirportView(airportViewModel: airportViewModel)) {
+                NavigationLink(destination: MapAirportView(region: locationViewModel.region, airports: airportViewModel.airportsResponse)) {
                     Text("SEARCH")
                         .font(.title)
                         .bold()
@@ -37,12 +36,9 @@ struct SelectRadiusView: View {
                         .cornerRadius(12)
                         .padding()
                 }
-                .onAppear {
-                    airportViewModel.checkIfLocationServicvesIsEnabled()
-                }
                 Spacer()
             }.simultaneousGesture(TapGesture().onEnded {
-                airportViewModel.setMarkers(radius: Int(sliderValue))
+                airportViewModel.setAirPorts(lat: locationViewModel.lat, lon: locationViewModel.lon, radius: Int(sliderValue))
             })
             .padding()
         }

@@ -11,24 +11,21 @@ import CoreLocationUI
 import MapKit
 
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     var manager: CLLocationManager?
     var lat: Double = 37.785834
     var lon: Double = -122.406417
-    var airportViewModel: AirportViewModel = AirportViewModel()
-    var markers: AirportModel = AirportModel()
     
     
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:37.785834 , longitude:  -122.406417), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     
-    func checkIfLocationServicvesIsEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            manager = CLLocationManager()
-            manager!.delegate = self
-        }
-        debugPrint("No services location available")
+    override init() {
+        super.init()
+        manager = CLLocationManager()
+        manager!.delegate = self
     }
+    
     
     private func checkLocationAuthorization() {
         guard let manager = manager else { return }
@@ -41,9 +38,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         case .denied:
             debugPrint("Deny")
         case .authorizedWhenInUse, .authorizedAlways:
-            self.lat = manager.location!.coordinate.latitude
-            self.lon = manager.location!.coordinate.longitude
-            region = MKCoordinateRegion(center: manager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+            setUserLocation()
             break
         @unknown default:
             break
@@ -51,12 +46,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     }
     
-    func setMarkers(radius: Int) {
-        airportViewModel.makeFecth(lat: lat, lon:lon, radius: radius)
-        markers = []
-        for m in airportViewModel.responses {
-            markers.append(.init(airportResponse: m))
-        }
+    func setUserLocation() {
+        guard let manager = manager else { return }
+        self.lat = manager.location!.coordinate.latitude
+        self.lon = manager.location!.coordinate.longitude
+        region = MKCoordinateRegion(center: manager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
