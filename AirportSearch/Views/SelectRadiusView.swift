@@ -14,12 +14,21 @@ struct SelectRadiusView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Spacer()
+                Image("Logo")
+                    .padding(.bottom, 40)
                 Text("\(Int(sliderValue))")
+                    .font(.system(size: 60, weight: .bold))
+                    .foregroundColor(.gray)
                 Slider(value: $sliderValue, in: 10...200, step: 5.0) { _ in
                     airportViewModel.setMarkers(radius: Int(sliderValue))
                 }
+                Text("RADIUS IN KM")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                Spacer()
                 NavigationLink(destination: MapAirportView(airportViewModel: airportViewModel)) {
-                    Text("Search")
+                    Text("SEARCH")
                         .font(.title)
                         .bold()
                         .frame(width: 285, height: 75)
@@ -31,6 +40,7 @@ struct SelectRadiusView: View {
                 .onAppear {
                     airportViewModel.checkIfLocationServicvesIsEnabled()
                 }
+                Spacer()
             }.simultaneousGesture(TapGesture().onEnded {
                 airportViewModel.setMarkers(radius: Int(sliderValue))
             })
