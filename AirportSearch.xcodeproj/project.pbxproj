@@ -18,6 +18,7 @@
 		8A489A8228DFED0000D17B91 /* SelectRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */; };
 		8A489A8428DFEE5200D17B91 /* MapAirportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A489A8328DFEE5200D17B91 /* MapAirportView.swift */; };
 		8A82855128E0BF7C004B4267 /* ListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A82855028E0BF7C004B4267 /* ListComponent.swift */; };
+		8A9ED77B28E1598000A64A27 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9ED77A28E1598000A64A27 /* SplashView.swift */; };
 		8ACF717728E0C1E100A5BF92 /* CellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF717628E0C1E100A5BF92 /* CellComponent.swift */; };
 		E220ACB92ADC411FAB129A07 /* Pods_AirportSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76B5876BA6BF90BA9CA26C0 /* Pods_AirportSearch.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRadiusView.swift; sourceTree = "<group>"; };
 		8A489A8328DFEE5200D17B91 /* MapAirportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAirportView.swift; sourceTree = "<group>"; };
 		8A82855028E0BF7C004B4267 /* ListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponent.swift; sourceTree = "<group>"; };
+		8A9ED77A28E1598000A64A27 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		8ACF717628E0C1E100A5BF92 /* CellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponent.swift; sourceTree = "<group>"; };
 		E76B5876BA6BF90BA9CA26C0 /* Pods_AirportSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirportSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 			children = (
 				8A489A8128DFED0000D17B91 /* SelectRadiusView.swift */,
 				8A489A8328DFEE5200D17B91 /* MapAirportView.swift */,
+				8A9ED77A28E1598000A64A27 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4110E828DF82050091476D /* AirportResponseModel.swift in Sources */,
+				8A9ED77B28E1598000A64A27 /* SplashView.swift in Sources */,
 				8A489A8428DFEE5200D17B91 /* MapAirportView.swift in Sources */,
 				8A4110EF28DF86F60091476D /* Env.swift in Sources */,
 				8A4110F328DF95700091476D /* LocationViewModel.swift in Sources */,
