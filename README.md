@@ -39,10 +39,10 @@ extension EnvironmentValues {
 
 ```
 
-3. Open Pokedex.xcworkspace
+3. Open AirportSearch.xcworkspace
 
 ```bash
-open Pokedex.xcworkspace
+open AirportSearch.xcworkspace
 ```
 
 ## Images
